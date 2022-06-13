@@ -3,30 +3,33 @@ import MD from 'crypto-js/md5'
 
 export const BASE_URL = `https://gateway.marvel.com/v1/public/comics?`;
 
-const myPublicKey = '9857783b5ce129eb93604fe4ce1bfcdb'
-const myPrivateKey = '4e28375814ef697e3a43212379d421de3b39d508'
-
-let getHash = (ts, privateKey, apiKey) => {
-    return MD( ts + privateKey + apiKey).toString()
+let getHash = (ts, PRIVATE_KEY, API_KEY) => {
+    return MD( ts + PRIVATE_KEY + API_KEY).toString()
 }
 
 let ts = Date.now().toString();
-let apiKey = "9857783b5ce129eb93604fe4ce1bfcdb";
-let privateKey = '4e28375814ef697e3a43212379d421de3b39d508';
-let hash = getHash(ts, privateKey, apiKey)
+let API_KEY = "9857783b5ce129eb93604fe4ce1bfcdb";
+let PRIVATE_KEY = '4e28375814ef697e3a43212379d421de3b39d508';
+let hash = getHash(ts, PRIVATE_KEY, API_KEY)
+
+const OFFSET = 20;
+const LIMIT = 20;
 
 
-
-export const getData = async (page, titleStartsWith, startYear) => {
+export const getData = async (page = 0, titleStartsWith, startYear) => {
     let searchQuery = '';
 
-    if(titleStartsWith){
-        searchQuery += `&titleStartsWith=${titleStartsWith}`
-    }
+    const params = {
+        ts: ts,
+        apikey: API_KEY,
+        hash: hash,
+        titleStartsWith: titleStartsWith,
+        startYear: startYear,
+        limit: LIMIT,
+        offset: OFFSET * page
+    };
 
-    if(startYear){
-        searchQuery += `&startYear=${startYear}`
-    }
-
-    return axios.get(`${BASE_URL}ts=${ts}&apikey=${myPublicKey}&hash=${hash}&limit=20&offset=${page * 20}${searchQuery}`);
+    return axios.get(`${BASE_URL}`, {
+        params
+    });
 }

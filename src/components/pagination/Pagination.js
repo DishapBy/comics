@@ -5,7 +5,6 @@ import ComicItem from "../comictIem/ComicItem";
 import Pagination from "@mui/material/Pagination";
 
 function MyPagination({loading, page, pageTotalCount, posts, changePage}) {
-
     return (
         <>
             {loading
