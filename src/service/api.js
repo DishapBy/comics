@@ -1,7 +1,6 @@
 import axios from "axios";
 import MD from 'crypto-js/md5'
 
-// export const BASE_URL = `https://gateway.marvel.com/v1/public/comics?&apikey=`;
 export const BASE_URL = `https://gateway.marvel.com/v1/public/comics?`;
 
 const myPublicKey = '9857783b5ce129eb93604fe4ce1bfcdb'
@@ -28,7 +27,6 @@ export const getData = async (page, titleStartsWith, startYear) => {
     if(startYear){
         searchQuery += `&startYear=${startYear}`
     }
-    console.log(`${BASE_URL}${ts}&apikey=${myPublicKey}&hash=${hash}&limit=20&offset=${page * 20}`)
 
     return axios.get(`${BASE_URL}ts=${ts}&apikey=${myPublicKey}&hash=${hash}&limit=20&offset=${page * 20}${searchQuery}`);
 }

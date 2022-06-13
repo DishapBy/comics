@@ -101,3 +101,19 @@
   display: flex;
   gap: 15px;
 }
+
+@media (max-width: 992px) {
+  .comics__container--item {
+    flex-basis: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container__input{
+    flex-direction: column;
+  }
+
+  .comics__container--item{
+    flex-basis: 100%;
+  }
+}
