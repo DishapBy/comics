@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/comics/static/css/main.6302f984.css",
-    "main.js": "/comics/static/js/main.256a7ea1.js",
+    "main.js": "/comics/static/js/main.f38f910b.js",
     "index.html": "/comics/index.html",
     "main.6302f984.css.map": "/comics/static/css/main.6302f984.css.map",
-    "main.256a7ea1.js.map": "/comics/static/js/main.256a7ea1.js.map"
+    "main.f38f910b.js.map": "/comics/static/js/main.f38f910b.js.map"
   },
   "entrypoints": [
     "static/css/main.6302f984.css",
-    "static/js/main.256a7ea1.js"
+    "static/js/main.f38f910b.js"
   ]
 }
