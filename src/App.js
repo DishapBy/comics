@@ -1,12 +1,12 @@
 import './App.css';
 import React from "react";
-import ItemContainer from "./components/itemsConteiner/ItemContainer";
+import MainContainer from "./components/MainContainer/MainContainer";
 
 
 function App() {
     return (
         <div className="App">
-            <ItemContainer />
+            <MainContainer />
         </div>
     );
 }

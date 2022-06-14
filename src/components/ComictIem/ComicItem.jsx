@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from '@mui/material';
 
-function ComicItem({title, description, path, thumbnail}) {
+function ComicItem({title, description, thumbnail}) {
 
 
     const img = thumbnail.path + '/portrait_medium.' + thumbnail.extension;

@@ -1,10 +1,10 @@
 import React from 'react';
 import {Container} from "@mui/material";
 
-function NotFoundMessage({loading, length}) {
+function NotFoundMessage({loading, length, isError}) {
     return (
         <>
-        { !loading && length === 0
+        { !loading && !length && !isError
             ? <div className={'container__message'}>
                 <h2>
                     Nothing was found. Change the query.
