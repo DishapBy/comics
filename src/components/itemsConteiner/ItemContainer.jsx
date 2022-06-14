@@ -24,7 +24,6 @@ function ItemContainer(props) {
     }, 1000);
 
     const changeYear = _debounce(({target: {value}}) => {
-        console.log(value)
         if (value > 999) {
             setStartYear(Number(value));
         }
