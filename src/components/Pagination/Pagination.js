@@ -1,8 +1,7 @@
 import React from 'react';
-import ComicItem from "../ComictIem/ComicItem";
 import Pagination from "@mui/material/Pagination";
 
-function MyPagination({loading, page, pageTotalCount, comics, changePage}) {
+function MyPagination({ page, pageTotalCount, changePage}) {
     return (
         <>
             <div className={'container__pagination'}>

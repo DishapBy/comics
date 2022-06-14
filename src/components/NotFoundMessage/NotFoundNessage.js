@@ -1,5 +1,4 @@
 import React from 'react';
-import {Container} from "@mui/material";
 
 function NotFoundMessage({loading, length, isError}) {
     return (
