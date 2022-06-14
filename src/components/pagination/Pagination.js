@@ -10,7 +10,7 @@ function MyPagination({loading, page, pageTotalCount, posts, changePage}) {
             {loading
                 ? <CircularProgress className={'loading__bar'} size='16rem'/>
                 : <>
-                    <Stack className={'container__pagination'} spacing={2}>
+                    <div className={'container__pagination'}>
                         <Pagination
                             count={pageTotalCount}
                             page={page}
@@ -19,7 +19,7 @@ function MyPagination({loading, page, pageTotalCount, posts, changePage}) {
                             }}
                         >
                         </Pagination>
-                    </Stack>
+                    </div>
                     <div className={'comics__container'}>
                         {posts.map(item => <ComicItem key={item.id} {...item} />)}
                     </div>
