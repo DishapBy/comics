@@ -24,8 +24,12 @@ function ItemContainer(props) {
     }, 1000);
 
     const changeYear = _debounce(({target: {value}}) => {
+        console.log(value)
         if (value > 999) {
             setStartYear(Number(value));
+        }
+        if(!value){
+            setStartYear(null);
         }
         setPage(1);
     }, 1000);
@@ -61,16 +65,7 @@ function ItemContainer(props) {
                     fullWidth
                     label={"Input year"}
                     inputProps={{maxLength: 4, type: "number"}}
-                    onChange={e => {
-                        if (e.target.value > 999) {
-                            changeYear(e)
-                            setPage(1);
-                        }
-                        if (!e.target.value) {
-                            setStartYear(null);
-                            setPage(1);
-                        }
-                    }}>
+                    onChange={changeYear}>
                 </TextField>
             </div>
 
