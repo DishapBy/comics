@@ -42,7 +42,7 @@
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .comics__container--item{
